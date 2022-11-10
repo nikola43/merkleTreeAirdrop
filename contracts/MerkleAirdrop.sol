@@ -56,6 +56,10 @@ contract MerkleAirdrop is Ownable {
         merkleRoot = _merkleRoot;
     }
 
+    function updateClaimAmount(uint256 _amount) external onlyOwner {
+        claimAmount = _amount;
+    }
+
     function canClaim(address claimer, bytes32[] calldata merkleProof)
         public
         view
@@ -70,3 +74,4 @@ contract MerkleAirdrop is Ownable {
             );
     }
 }
+
